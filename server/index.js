@@ -6,13 +6,19 @@ const mongoose = require("mongoose");
 
 const Contact = require("./models/Contact");
 
+console.log(
+    "Mongo URI exists:",
+    !!process.env.MONGODB_URI
+);
+
 mongoose
     .connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB Connected")
     })
     .catch((error) => {
-        console.log(error);
+        console.log("MONGODB CONNECTION ERROR:");
+        console.log(error.message);
     });
 
 const app = express();
