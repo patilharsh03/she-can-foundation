@@ -1,0 +1,1 @@
+export const API_URL = "https://she-can-foundation-14hn.onrender.com";

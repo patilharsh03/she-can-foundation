@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config";
 
 function Home() {
     const [submitted, setSubmitted] = useState(false);
@@ -50,7 +51,7 @@ function Home() {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/contact",
+                `${API_URL}/api/contact`,
                 {
                     method: "POST",
                     headers: {

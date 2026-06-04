@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 function Admin() {
     const [contacts, setContacts] = useState([]);
@@ -19,7 +20,7 @@ function Admin() {
     const fetchContacts = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/contact"
+                `${API_URL}/api/contact`
             );
 
             const data = await response.json();
